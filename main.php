@@ -198,7 +198,7 @@ if( is_admin() ) {
         $action = urlencode( $_GET['mf_action'] );
       }
 
-      //check only mf_section has prefix mf    
+      //check only mf_section has prefix mf
       if ( !(strpos($section, "mf_") === 0) ) {
         die;
       }
@@ -389,7 +389,7 @@ if ( !function_exists('mf_change_template') ) {
       return;
     }
 
-    $template = TEMPLATEPATH.'/'.$template;
+    $template = get_stylesheet_directory().'/'.$template;
 
     if ( $template = apply_filters( 'template_include', $template ) ) {
       include($template);
